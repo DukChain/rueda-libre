@@ -1,0 +1,24 @@
+Informacion otorgada en la seccion network al usar live server en el index.html por primera vez
+
+url:  http://127.0.0.1:5500/rueda-libre/index.html
+protocolo: http
+host: 127.0.0.1
+puerto: 5500
+ruta: /rueda-libre/index.html
+metodo:   GET
+codigo estado:  304 Not Modified
+
+
+mensaje dado al usar /prueba.html en la terminal de chrome: 404 Not Found
+
+
+
+
+
+------------------------------
+
+EL uso de Html, CSS y JS, se vera reflejado de la siguiente manera
+
+HTML es la base de la pagina un ejemplo de este es la informacion principal de Rueda libre
+CSS es la parte visual la que ayudara que la informacion principal se vea de manera ordenada y coherente
+JS es la parte de acciones la que permitira que algunas acciones dentro de la pagina redireccionen datos o los almacenen en la nube
