@@ -9,16 +9,60 @@ metodo:   GET
 codigo estado:  304 Not Modified
 
 
-mensaje dado al usar /prueba.html en la terminal de chrome: 404 Not Found
-
-
-
-
+mensaje dado al usar /prueba.html (Inexistente) en la terminal de chrome: 404 Not Found
 
 ------------------------------
 
-EL uso de Html, CSS y JS, se vera reflejado de la siguiente manera
+El uso de Html, CSS y JS, se vera reflejado de la siguiente manera
 
 HTML es la base de la pagina un ejemplo de este es la informacion principal de Rueda libre
 CSS es la parte visual la que ayudara que la informacion principal se vea de manera ordenada y coherente
 JS es la parte de acciones la que permitira que algunas acciones dentro de la pagina redireccionen datos o los almacenen en la nube
+
+------------------------------
+
+Se muestra como es el proceso de Rutas entre las paginas creadas
+
+Index
+
+Origen - Index
+Destino - Index
+ruta - ./index.html
+
+Origen - Index
+Destino - Tarifas
+ruta - paginas/tarifas.html
+
+Origen - Index
+Destino - reservas
+ruta - paginas/reservas.html
+
+Tarifas
+
+Origen - Tarifas
+Destino - Index
+ruta - ../index.html
+
+Origen - Tarifas
+Destino - Tarifas
+ruta - ./tarifas.html
+
+Origen - Tarifas
+Destino - reservas
+ruta - reservas.html
+
+Reservas
+
+Origen - Reservas
+Destino - Index
+ruta - ../index.html
+
+Origen - Reservas
+Destino - Tarifas
+ruta - tarifas.html
+
+Origen - Reservas
+Destino - Reservas
+ruta - ./reservas.html
+
+------------------------------
