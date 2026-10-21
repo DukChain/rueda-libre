@@ -24,30 +24,61 @@
 
     </header>
 
-    
-
 
     <main>
 
-        <h1>Reserva tu bicicleta</h1>
+        <section>
+            <h1>Reserva tu bicicleta</h1>
 
 
-        <a href="mailto:hola@ruedalibre.example">Empieza una nueva experiencia con Nosotros</a>
+            <a href="mailto:hola@ruedalibre.example">Empieza una nueva experiencia con Nosotros</a>
 
-        <dl>
+            <dl>
 
-            <dt>Lunes a viernes</dt>
-            <dd>7:00 a. m. a 7:00 p. m</dd>
+                <dt>Lunes a viernes</dt>
+                <dd>7:00 a. m. a 7:00 p. m</dd>
 
-            <dt>sábados, domingos y festivos</dt>
-            <dd>6:00 a. m. a 2:00 p. m</dd>
+                <dt>sábados, domingos y festivos</dt>
+                <dd>6:00 a. m. a 2:00 p. m</dd>
 
 
-        </dl>
+            </dl>
+        </section>
+
+        <section>
+
+           <form action="#" method="post">
+
+                <fieldset>
+                    <legend>Tus Datos</legend>
+
+                    <p>
+                        <label for="Nombre">Nombre Completo</label>
+                        <input type="text" id="Nombre" name="Nombre" required minlength="3" >
+                    </p>
+
+                    <p>
+                        <label for="Documento">Documento</label>
+                        <input type="text" id="Documento" name="Documento" pattern="[0-9]{6,10}" required>
+                    </p>
+
+                    <p>
+                        <label for="Correo">Correo electronico</label>
+                        <input type="email" id="Correo" name="Correo" required>
+                    </p>
+
+                    <p>
+                        <label for="Celular">Celular</label>
+                        <input type="tel" id="Celular" name="Celular" required>
+                    </p>
+                </fieldset>
+
+           </form>
+
+        </section>
+        
 
     </main>
-
-
 
 
    <footer>
