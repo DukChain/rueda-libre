@@ -25,44 +25,155 @@ Se muestra como es el proceso de Rutas entre las paginas creadas
 
 Index
 
-Origen - Index
-Destino - Index
-ruta - ./index.html
+Origen - index.html
+Destino - index.html
+ruta - <a href="index.html">Inicio</a>
 
-Origen - Index
-Destino - Tarifas
-ruta - paginas/tarifas.html
+Origen - index.html
+Destino - paginas/tarifas.html
+ruta - <a href="paginas/tarifas.html">Tarifas y Rutas</a>
 
-Origen - Index
-Destino - reservas
-ruta - paginas/reservas.html
+Origen - index.html
+Destino - paginas/reservas.html
+ruta - <a href="paginas/reservas.html">Reservas</a>
+
 
 Tarifas
 
-Origen - Tarifas
-Destino - Index
-ruta - ../index.html
+Origen - tarifas.html
+Destino - ../index.html
+ruta - .<a href="../index.html">Inicio</a>
 
-Origen - Tarifas
-Destino - Tarifas
-ruta - ./tarifas.html
+Origen - tarifas.html
+Destino - tarifas.html
+ruta - <a href="tarifas.html">Tarifas y Rutas</a>
 
-Origen - Tarifas
-Destino - reservas
-ruta - reservas.html
+Origen - tarifas.html
+Destino - reservas.html
+ruta - <a href="reservas.html">Reservas</a>
 
 Reservas
 
-Origen - Reservas
-Destino - Index
-ruta - ../index.html
+Origen - reservas.html
+Destino - index.html
+ruta - .<a href="../index.html">Inicio</a>
 
-Origen - Reservas
-Destino - Tarifas
-ruta - tarifas.html
+Origen - reservas.html
+Destino - tarifas.html
+ruta - <a href="tarifas.html">Tarifas y Rutas</a>
 
-Origen - Reservas
-Destino - Reservas
-ruta - ./reservas.html
+Origen - reservas.html
+Destino - reservas.html
+ruta - <a href="reservas.html">Reservas</a>
 
+Extras
+
+Origen - ./index.html
+Destino - paginas/tarifas.html#Recorridos
+Ruta - <a href="paginas/tarifas.html#Recorridos"><h3>Recorridos guiados</h3></a>
+
+Origen - ./index.html
+Destino - paginas/reservas.html
+Ruta - <a href="paginas/reservas.html">Reserva <strong>Ahora</strong></a>
+
+Origen - paginas/tarifas.html
+Destino - reservas.html
+Ruta - <a href="reservas.html">Reserva <strong>Ahora</strong></a>
 ------------------------------
+
+Esquema semantico 
+
+Index
+
+<body>
+    <header>
+       <nav>
+    <main>
+       <section>
+           <h2>
+           <p>
+           
+           
+       <section>
+       	   <h2>
+       	   <img>
+       	   <article>
+       	      <h3>
+       	      <p>
+       	   
+       	   <article>
+       	      <a>
+       	      <p>
+       	   
+       	   <article>
+       	      <h3>
+       	      <p>
+       	      
+       	      
+       <section>
+           <article>
+              <h2>
+              <ol>
+              <a>
+              
+           <article>
+              <p>
+              <ul>
+       <h2>
+       <img>
+    
+    <footer>
+    	<a>
+    	<p>
+    	<ul>
+    	    	      	
+    	
+tarifas.html
+<body>
+    <header>
+        <nav>
+    <main>
+        <section>
+            <table>
+                <caption>
+                <thead>
+                <tbody>
+        <section>
+            <table>
+                <caption>
+                <thead>
+                <tbody>
+                <a>
+                
+        <aside>
+            <p>
+            <p>
+            
+        <footer>
+    	<a>
+    	<p>
+    	<ul> 
+    	   
+    	   
+    	   
+reservas.html
+<body>
+    <header>
+        <nav>
+    <main>
+        <section>
+            <h1>
+            <a>
+            <dl>
+            
+    <footer>
+    	<a>
+    	<p>
+    	<ul>
+    	
+    	
+------------------------------
+            
+            
+            
+       

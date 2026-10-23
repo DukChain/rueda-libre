@@ -54,12 +54,12 @@
 
                     <p>
                         <label for="Nombre">Nombre Completo</label>
-                        <input type="text" id="Nombre" name="Nombre" required minlength="3" >
+                        <input type="text" id="Nombre" name="Nombre" required minlength="3" title="El nombre debe contener minimo 3 caracteres">
                     </p>
 
                     <p>
                         <label for="Documento">Documento</label>
-                        <input type="text" id="Documento" name="Documento" pattern="[0-9]{6,10}" required>
+                        <input type="text" id="Documento" name="Documento" inputmode="numeric" pattern="[0-9]{6,10}" placeholder="Ingrese solo numeros" title="El documento debe ser numerico y debe tener minimo 6 digitos y maximo 10 digitos" required>
                     </p>
 
                     <p>
@@ -69,10 +69,73 @@
 
                     <p>
                         <label for="Celular">Celular</label>
-                        <input type="tel" id="Celular" name="Celular" required>
+                        <input type="tel" id="Celular" name="Celular" title="El celular debe tener 10 dígitos y empezar por 3 (Ej: 3001234567)" inputmode="numeric" pattern="^3[0-9]{9}$" required>
                     </p>
                 </fieldset>
 
+                <fieldset>
+                    <legend>Tu Alquiler</legend>
+
+                    <p>
+                        <label for="FAlquiler">Fecha</label>
+                        <input type="date" id="FAlquiler" name="FAlquiler" min="2026-11-01" max="2026-12-31" title="El campo está incompleto o contiene una fecha no válida" required>
+                    </p>
+                    <p>
+                        <label for="TypeCicle">Tipo de Bicicleta</label>
+                        <select name="TypeCicle" id="TypeCicle" required title="Selecciona una opción">
+                            <option value="">Selecciona una opción</option>
+                            <option value="Urbana">Urbana</option>
+                            <option value="Montana">Montaña</option>
+                            <option value="Electrica">Electrica</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="TypeCicle">Tipo de Plan</label>
+                        <select name="TypeCicle" id="TypeCicle" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="OneHour">1 Hora</option>
+                            <option value="HalfDay">Medio Dia</option>
+                            <option value="AllDay">Dia Completo</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="CantidadB">Cantidad de Bicicletas</label>
+                        <input type="number" id="CantidadB" name="CantidadB" inputmode="numeric" min="1" max="6"  required >
+                    </p>
+
+                    <p>Recorrido Guiado</p>
+                    <ul style="list-style: none;">
+                        <li><label>
+                            <input type="radio" name="GuideRecor" value="RioParques" required> Rio y Parques
+                        </label></li>
+                        <li><label>
+                            <input type="radio" name="GuideRecor" value="SaboresBarrio"> Sabores de Barrio
+                        </label></li>
+                        <li><label>
+                            <input type="radio" name="GuideRecor" value="RetoPalmas"> Reto Las Palmas
+                        </label></li>
+                        <li><label>
+                            <input type="radio" name="GuideRecor" value="NoAplica"> No Aplica
+                        </label></li>
+                    </ul>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Confirmación</legend>
+
+                    <p>
+                        <label for="Coment">Comentarios</label>
+                        <input type="text" id="Coment" name="Coment" maxlength="300">
+                    </p>
+                    <p>
+                        <label for="Politicas">Acepta las Politicas de la empresa</label>
+                        <input type="checkbox" id="Politicas" name="Politicas" value="si" title="Recuerda aceptarlas" required> 
+                    </p>
+
+                    <button type="submit">Enviar</button>
+                </fieldset>
+                
            </form>
 
         </section>
