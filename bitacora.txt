@@ -173,6 +173,46 @@ reservas.html
     	
     	
 ------------------------------
+
+Pruebas de campo: 
+
+1. Al no escribir como mínimo 3 caracteres en el nombre sale el Error: El nombre debe contener minimo 3 caracteres
+
+2. En el campo cantidad de bicicletas al no poner mas de 6 bicicletas: Value must be less than or equal to 6.
+
+3. En el campo de correo sí no escribo el @: Please include an '@' in the email address.
+
+4. En el campo documento el escribir menos de 6 dígitos sale: El documento debe ser numerico y debe tener minimo 6 digitos y maximo 10 digitos
+
+5. En el campo de celular al no comenzar con el número 3 sale: El celular debe tener 10 dígitos y empezar por 3 (Ej: 3001234567)
+
+6. Al tratar de Enviar reserva sin seleccionar la fecha de alquiler sale: El campo está incompleto o contiene una fecha no válida.
+
+7. Al no seleccionar el tipo de bicicleta: Selecciona una opción
+
+8. Al no haber chequeado los términos y condiciones: Recuerda aceptarlas.
+
+
+
+------------------------------
+
+
+combinacion 1: blanco sobre verde ruta: apta para texto largo
+
+combinacion 2: blanco sobre naranja pedal: no apto
+
+combinacion 3: azul noche sobre naranja pedal: apto para ambos
+
+combinacion 4: azul noche sobre crema: apto para ambos
+
+combinacion 5: gris asfalto sobre crema: apto solo para texto largo
+
+combinacion 6: verde ruta sobre crema: apto solo para texto largo
+
+combinacion 7: naranja pedal sobre crema: no apto
+
+combinacion 8: blanco sobre azul noche: apto para ambos
+
             
             
             
