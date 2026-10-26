@@ -1,0 +1,379 @@
+:root{
+
+    --Btn-Link:#1E7A4F;
+    --Dest-SecB:#F39A2B;
+    --Title-Header:#14213D;
+    --Background:#FAF6EF;
+    --Sec-Text:#5B6470;
+    --Blancuzco:#FFFFFF;
+    --Division:#E5E5E5;
+    --Font-Title: "Montserrat",Arial,sans-serif;
+    --Font-Text: "Open Sans",Arial, sans-serif;
+    --Text-sm: 0.5rem;
+    --Text-md: 1.5rem;
+    --Text-lg: 3rem;
+    --Logo-Mont:5.5rem;
+    --img-final:17rem;
+    
+
+}
+
+/* Secciones semanticas*/
+
+
+
+body{
+
+    background-color: var(--Background);
+    margin: 0;
+
+}
+
+
+header,footer{
+
+    display: flex; 
+    background-color: var(--Title-Header);
+    font-family: var(--Font-Text);
+    color: var(--Blancuzco);
+    padding: var(--Text-sm) var(--Text-lg);
+    list-style: none;
+    
+}
+
+footer a{
+    color: var(--Blancuzco);
+}
+
+
+header{
+    display: flex;             /* Convierte los elementos hijos en una línea horizontal */
+    align-items: center;       /* Centra los elementos verticalmente */
+
+}
+
+nav ul {
+    display: flex;
+    gap: var(--Text-lg);
+    list-style: none;  
+    margin: var(--Text-lg);
+    padding: 0;
+}
+
+nav ul li a {
+    display: block; /* Hace que el enlace se comporte como un bloque y llene el li */
+    padding: var(--Text-md) 25px; /* ¡Ajusta esto! Más padding vertical y horizontal = más área iluminada */
+    color: var(--Blancuzco);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: var(--Text-sm); /* Opcional: bordes redondeados suaves */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+main {
+
+    padding: var(--Text-lg);
+    max-width: 60rem;
+    margin: 0 auto;
+
+}
+
+table {
+
+    width: 100%;                  /* Ocupa todo el ancho disponible */
+    border-collapse: collapse;
+    text-align: left;
+    font-family: var(--Font-Text);
+
+}
+
+caption {
+
+    font-family: var(--Font-Title);
+    margin: var(--Text-lg);
+
+}
+
+th, td {
+    padding: 1rem var(--Text-lg); /* Espaciado interno cómodo (arriba/abajo y lados) */
+    border-bottom: 1px solid var(--Division); /* Una línea divisoria sutil entre filas */
+}
+
+th {
+    background-color: var(--Title-Header);    /* Tu fondo azul oscuro */
+    color: var(--Blancuzco);               /* Texto blanco para buen contraste */
+    font-family: var(--Font-Title); /* Tu fuente de títulos */
+    font-weight: 700px;
+}
+
+aside{
+
+    display: block;
+    margin: var(--Logo-Mont);
+
+}
+
+
+
+
+
+
+/*Especificos*/
+
+header img {
+
+    width: var(--Logo-Mont);       /* Ocupa todo el ancho de su contenedor */
+    height: var(--Logo-Mont);      /* Ocupa todo el alto de su contenedor */
+    object-fit: cover; /* Evita que la imagen se deforme */
+    border-radius: 50%;
+    margin: var(--Text-md);
+}
+
+section img { 
+
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* ¡Esta es la clave! Hace que la imagen cubra todo el contenedor recortándose proporcionalmente si es necesario */
+    display: block;
+    
+}
+
+h1,h2,h3,legend{
+
+    font-family: var(--Font-Title);
+    
+
+}
+
+p,ul,ol,dl{
+
+    font-family: var(--Font-Text);
+}
+
+article ol{
+    
+    display: flex;
+    flex-direction: column;
+    gap: var(--Text-sm);
+    padding-left: var(--Text-md);
+
+}
+article ul{
+    
+    display: flex;
+    flex-direction: column;
+    gap: var(--Text-sm);
+    padding-left: var(--Text-md);
+
+}
+
+
+
+
+
+
+
+/*Clases - ID*/
+
+
+
+.No-list {
+    
+    list-style: none;
+}
+
+.img-footer{
+
+    width: var(--img-final);
+    height: var(--img-final);
+
+}
+
+.Reservation{
+    text-decoration: none;
+    color: var(--Blancuzco);
+    background-color: var(--Btn-Link);
+    border-radius: var(--Text-sm);
+    padding: var(--Text-sm) var(--Text-md);
+    
+    font-family: var(--Font-Text);
+
+
+}
+
+.menu{
+
+    color: var(--Background);
+}
+
+.link-gen{
+
+    color: #000000;
+    text-decoration: none;
+
+}
+
+#wpp{
+
+    position: fixed;
+    right: var(--Text-md);
+    bottom: var(--Text-md);
+    z-index: 9999;
+
+}
+
+#wpp img{
+
+    width: var(--Text-lg);
+
+}
+
+
+/*Hover focus*/
+
+nav ul li a:hover{
+    color: var(--Title-Header);
+    background-color: #F39A2B;
+
+}
+
+tbody tr:hover {
+    background-color: var(--Division);    /* Un gris muy claro al pasar el cursor */
+}
+
+
+.Reservation:hover{
+    
+    color: #14213D;
+    background-color: #F39A2B;
+
+}
+
+footer section a:hover{
+
+    color: #14213D;
+    background-color: #F39A2B;
+    
+}
+
+
+.link-gen:hover{
+
+    color: var(--Sec-Text);
+
+}
+
+
+
+form {
+    max-width: 650px;
+    margin: 0 auto;
+    background: var(--Blancuzco);
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid var(--Division);
+    box-shadow: 0 4px 20px rgba(20, 33, 61, 0.05);
+}
+
+
+fieldset {
+    border: 1px solid var(--Division);
+    border-radius: 8px;
+    padding: 22px;
+    margin-bottom: 24px;
+    background-color: var(--Blancuzco);
+}
+
+legend {
+    font-family: var(--Font-Title);
+    font-size: var(--Text-md);
+    color: var(--Title-Header);
+    padding: 0 10px;
+}
+
+fieldset p {
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-family: var(--Font-Text);
+    color: var(--Title-Header);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--Division);
+    border-radius: 6px;
+    font-family: var(--Font-Text);
+    color: var(--Title-Header);
+    box-sizing: border-box; 
+    background-color: var(--Blancuzco);
+}
+
+
+input::placeholder {
+    color: var(--Sec-Text);
+    opacity: 0.7;
+}
+
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--Btn-Link);
+    box-shadow: 0 0 0 3px rgba(30, 122, 79, 0.15);
+}
+
+
+ul.No-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaciado uniforme entre opciones */
+}
+
+ul.No-list li label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: normal;
+    color: var(--Title-Header);
+    cursor: pointer;
+    background-color: var(--Background);
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--Division);
+
+}
+
+ul.No-list li label:hover {
+    border-color: var(--Btn-Link);
+}
+
+button[type="submit"] {
+    background-color: var(--Btn-Link);
+    color: var(--Blancuzco);
+    border: none;
+    padding: 14px 20px;
+    font-family: var(--Font-Title);
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--Dest-SecB);
+    color: var(--Title-Header);
+}
+
+
