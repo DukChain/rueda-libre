@@ -1,3 +1,5 @@
+SEMANA 1
+
 Informacion otorgada en la seccion network al usar live server en el index.html por primera vez
 
 url:  http://127.0.0.1:5500/rueda-libre/index.html
@@ -213,7 +215,32 @@ combinacion 7: naranja pedal sobre crema: no apto
 
 combinacion 8: blanco sobre azul noche: apto para ambos
 
+
+SEMANA 1 RESUMEN: 
+
+Mi experiencia desde alguien que ya trabajo hace años con HTML y CSS no fue tan complicada la gestión, hice uso del material entregado y entendi 
+los requisitos del moodle en su mayoria, tanto para el Dia 1 y Dia 2 que trata principalmente sobre HTML hice uso de la AI (Gemini) exclusivamente para consultas,
+refrescar memoria y aclarar dudas, ya para el Dia 3 hice mucho mas uso de la AI ya que siempre me a disgustado hacer los CSS, aunque gran parte fue como en HTML
+solo resolviendo dudas e inquietudes para la parte del Formulario y Tabla copie directamente el codigo que me entrego la AI (obvio primero entendiendo todo lo que me daba).
             
             
-            
+------------------------------  *  ------------------------------
+
+SEMANA 2
+
+Se estrecha poco a poco la ventana del navegador y tanto header como footer reaccionan como deberian, haceidno que no se superponga la informacion y sea visible
+
+1280 px Se ven 3 por seccion
+900 px Se ven 3 por seccion
+500 px Se ven 3 por seccion, mas apretados pero aun asi todo el contenido es visible y nada se superpone entre si.
+
        
+OCT 28 - SEMANA 2 / DIA 1 / MiniReto 1, 2 y 3
+
+Se avanza sin problemas en el uso de grind se usa solo los recursos del moodle, el unico problema fue en la separacion de un texto e imagen en su contenedor, 
+se consulto con otros coders, la AI y el TL, se soluciono gracias al TL cambiando una informacion basica, adicionalmente para antes de ir al MiniReto 4 del Dia 1
+se uso Claude entregandole todo el CSS pidiendole organice el mismo y valide que redundancias se encuentran, Claude no encontro redundancias y solo entrego el CSS 
+de manera mas organizada.
+
+Adicionalmente se agrego un resumen general sobre lo sucedido en la semana 1 y se intentara realizar en la bitacora actualizaciones mas regulares.
+
