@@ -21,7 +21,7 @@
         <nav>
             <ul>
 
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html" class="activo">Inicio</a></li>
                 <li><a href="paginas/tarifas.html">Tarifas y Rutas</a></li>
                 <li><a href="paginas/reservas.html">Reservas</a></li>
 
@@ -29,25 +29,33 @@
         </nav>
 
     </header>
-    <section><img src="img/Bici-Promo.avif" alt="Imagen Promotiva Bicicleta"></section>
     
     <main>
         
-        <section>
-            <h2>¿Quiénes somos?</h2>
+        <section class="QuienSomos">
+            <article>
+                <h2>¿Quiénes somos?</h2>
+                <p>Somos una empresa apasionada por el ciclismo urbano y el turismo sobre ruedas. 
+                    Nos dedicamos a promover una movilidad <strong>sostenible, saludable y divertida</strong> en la ciudad, 
+                    ofreciendo a nuestros visitantes y residentes <a href="#Encuentranos" class="link-gen">
+                        <strong> la mejor experiencia sobre dos ruedas</strong></a> con atención personalizada y equipos de excelente calidad.</p>
+            </article>
 
-            <p>Somos una empresa apasionada por el ciclismo urbano y el turismo sobre ruedas. Nos dedicamos a promover una movilidad <strong>sostenible, saludable y divertida</strong> en la ciudad, ofreciendo a nuestros visitantes y residentes <a href="#Encuentranos" class="link-gen">la mejor experiencia sobre dos ruedas</a> con atención personalizada y equipos de excelente calidad.</p>
+            <img src="img/Bici-Promo.png" alt="Imagen Promotiva Bicicleta" class ="img-inc">
+
 
         </section>
 
         <section>
             <h2>Nuestros servicios</h2>
 
-            <img src="/img/QSomos.avif" alt="">
+            
 
 
             <article id="Alquiler">
                 <h3>Alquiler de bicicletas</h3>
+                <img src="img/Alquiler-img.png" alt="">
+                
 
                 <p>Ofrecemos alquiler de bicicletas urbanas y de montaña adaptadas a tus necesidades. El servicio <strong> incluye casco y candado sin costo adicional</strong> para garantizar tu seguridad en todo momento. Nos esforzamos por ofrecerte la máxima libertad para explorar cada rincón a tu propio ritmo.</p>
 
@@ -55,6 +63,7 @@
 
             <article id="Recorrido">
                 <a href="paginas/tarifas.html#Recorridos" class="link-gen"><h3>Recorridos guiados</h3></a>
+                <img src="img/QSomos.png" alt="">
 
                 <p>Diseñamos rutas turísticas guiadas por los puntos más emblemáticos e historias fascinantes de la ciudad. Contamos con <strong>guías locales certificados</strong> que acompañarán al grupo en todo momento. Es una experiencia verdaderamente inolvidable para compartir con amigos o familia.</p>
     
@@ -62,6 +71,7 @@
     
             <article id="Taller">
                 <h3>Taller básico</h3>
+                <img src="img/Taller-img.png" alt="">
 
                 <p>Brindamos servicio técnico y mantenimiento preventivo para que tu bicicleta siempre esté en óptimas condiciones. Realizamos <strong>ajustes mecánicos al instante</strong> y revisiones de seguridad rápidas. Te brindamos la tranquilidad que necesitas antes de salir a rodar.</p>
     
@@ -73,7 +83,7 @@
             <article>
                 <h2>¿Cómo alquilar?</h2>
 
-                <img src="img/Rueda-Renta.png" alt="">
+                <img src="img/Rueda-Renta.png" alt="" class="img-inc">
 
                 <ol>
                     <li><strong>Selecciona tu bicicleta:</strong> Elige el tipo de bicicleta que mejor se adapte a tus necesidades.</li>
@@ -82,7 +92,7 @@
                     <li><strong>¡Confirma tu reserva!:</strong> Envía el formulario y espera la confirmación para preparar tu próxima aventura sobre ruedas.</li>
                 </ol>
 
-                <a class="Reservation" href="paginas/reservas.html" >Reserva <strong>Ahora</strong></a>
+                <!-- <a class="Reservation" href="paginas/reservas.html" >Reserva <strong>Ahora</strong></a> -->
             </article>
     
             <article>
@@ -97,6 +107,92 @@
 
             </article>
         </section>
+        <h2>Nuestra flota</h2>
+        <section class="flota">
+            
+            <article>
+                <h3>Urbana Clásica</h3>
+                <img src="img/Urb-Clas.png" alt="">
+                <p>Cómoda y liviana para las ciclorrutas.</p>
+                <p><strong>$10.000/h</strong> </p>
+                 <a class="Reservation" href="paginas/reservas.html" >Reserva <strong>Ahora</strong></a>
+            </article>
+            <article>
+                <h3>Urbana Plegable</h3>
+                <img src="img/Urb-Pleg.png" alt="">
+                <p>Se dobla en segundos; ideal para combinar con el metro.</p>
+                <p><strong>$12.000/h</strong> </p>
+                 <a class="Reservation" href="paginas/reservas.html" >Reserva <strong>Ahora</strong></a>
+            </article>
+            <article>
+                <h3>Montaña Trail</h3>
+                <img src="img/Mont-Trial.png" alt="">
+                <p>Suspensión delantera y 21 cambios para las subidas.</p>
+                <p><strong>$15.000/h</strong> </p>
+                 <a class="Reservation" href="paginas/reservas.html" >Reserva <strong>Ahora</strong></a>
+            </article>
+            <article>
+                <h3>Gravel Aventura</h3>
+                <img src="img/Grav-Avent.png" alt="">
+                <p>Para rutas mixtas de asfalto y destapado.</p>
+                <p><strong>$18.000/h</strong> </p>
+                 <a class="Reservation" href="paginas/reservas.html" >Reserva <strong>Ahora</strong></a>
+            </article>
+            <article>
+                <h3>Eléctrica Urbana</h3>
+                <img src="img/Elec-Urb.png" alt="">
+                <p>Asistencia eléctrica con 45 km de autonomía.</p>
+                <p><strong>$25.000/h</strong> </p>
+                 <a class="Reservation" href="paginas/reservas.html" >Reserva <strong>Ahora</strong></a>
+            </article>
+            <article>
+                <h3>Infantil</h3>
+                <img src="img/Infantil.png" alt="">
+                <p>Para niños de 6 a 10 años.</p>
+                <p><strong>$8.000/h</strong> </p>
+                 <a class="Reservation" href="paginas/reservas.html" >Reserva <strong>Ahora</strong></a>
+            </article>
+            <article>
+                <h3>Tándem</h3>
+                <img src="img/Tandem.png" alt="">
+                <p>Para dos personas; perfecta para pasear en pareja.</p>
+                <p><strong>$20.000/h</strong> </p>
+                 <a class="Reservation" href="paginas/reservas.html" >Reserva <strong>Ahora</strong></a>
+            </article>
+
+
+        </section>
+        <h2>Nuestras Rutas</h2>
+        <aside class="GRutas">
+            <section>
+                <article>
+                    <h3>Río y Parques</h3>
+                    <p>Un recorrido plano, fresco y relajado, perfecto para conectar con los espacios verdes más 
+                        emblemáticos de la ciudad a lo largo del río. Disfruta de la brisa, el paisaje urbano y 
+                        parques llenos de vida mientras pedaleas a un ritmo cómodo e ideal para todos los niveles.</p>
+                </article>
+                <img src="img/Rio-Parq-img.png" alt="">
+            </section>
+            <section>
+                <article>
+                    <h3>Sabores de Barrio</h3>
+                    <p>Explora la auténtica esencia urbana a través de sus calles coloridas, arquitectura tradicional 
+                        y rincones llenos de historia. Haremos paradas estratégicas para probar bocados y delicias 
+                        locales que te harán enamorarte de la cultura y la calidez de nuestra gente.</p>
+                </article>
+                <img src="img/Sab-Bar-img.png" alt="">
+            </section>
+            <section>
+                <article>
+                    <h3>Reto Las Palmas</h3>
+                    <p>Pensada para los amantes del ciclismo que buscan ponerse a prueba. Enfréntate a una de las subidas 
+                        más emblemáticas de la región y corónala con una vista espectacular e inigualable del valle. 
+                        ¡La máxima satisfacción sobre pedales!</p>
+                </article>
+                <img src="img/Ret-palmas-img.png" alt="">
+            </section>
+
+        </aside>
 
         <section>
             <h2  id="#Encuentranos">Encuéntranos</h2>

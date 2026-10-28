@@ -120,12 +120,11 @@ th {
     font-weight: 700px;
 }
 
-aside{
-
-    display: block;
+.Tarifas-Side {
+    display: flex;
+    flex-direction: column;
     margin: var(--Logo-Mont);
-
-}
+    }
 
 /* Formulario */
 
@@ -264,8 +263,15 @@ header img {
     margin: var(--Text-md);
 }
 
-section img { 
+.QuienSomos {
 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--Text-md);
+}
+
+.img-inc { 
+    border-radius: 6px;
     width: 100%;
     height: 400px;
     object-fit: cover; /* ¡Esta es la clave! Hace que la imagen cubra todo el contenedor recortándose proporcionalmente si es necesario */
@@ -318,7 +324,7 @@ article ul{
 }
 
 .img-footer{
-
+    border-radius: 6px;
     width: var(--img-final);
     height: var(--img-final);
 
@@ -329,13 +335,12 @@ article ul{
     color: var(--Blancuzco);
     background-color: var(--Btn-Link);
     border-radius: var(--Text-sm);
-    padding: var(--Text-sm) var(--Text-md);
+    padding: var(--Text-sm) var(--Text-sm);
     font-family: var(--Font-Text);
     cursor: pointer; /* Cambia el cursor a una mano */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: all 0.3s ease; /* Suaviza todas las transiciones */
-
-
+    max-width: 7rem;
 }
 
 .menu{
@@ -345,9 +350,78 @@ article ul{
 
 .link-gen{
 
-    color: #000000;
+    color: var(--Sec-Text);
     text-decoration: none;
 
+}
+
+.activo {
+    background-color: var(--Btn-Link);
+    color: var(--Background);
+
+}
+
+.activo:hover {
+    background-color: #209e63;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.GRutas { 
+    margin: 0;
+}
+/*
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--Text-md);
+    */
+.GRutas section{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--Text-md);
+}
+
+.GRutas section article {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espacio entre el h3 y el p */
+}
+
+.GRutas section article p {
+    margin: 0;
+    /* Evita que palabras muy largas rompan el diseño si las hubiera */
+    word-break: break-word; 
+}
+.GRutas img {
+
+    width: 10rem;
+    /*
+    border-radius: 6px;
+    height: 17rem;
+    */
+}
+
+.flota {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--Text-md);
+}
+
+.flota article {
+    background-color: var(--Blancuzco);
+    border: 0.5px solid var(--Division);
+    border-radius: 7px ;
+    padding: var(--Text-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.flota img {
+    border-radius: 6px;
+    width: 150px;
 }
 
 #wpp{
@@ -366,19 +440,28 @@ article ul{
 }
 
 #Alquiler, #Recorrido, #Taller{
+
    padding: var(--Text-sm) var(--Text-sm);
    border: 0.5px solid var(--Division);
    border-radius: var(--Text-sm);
    flex-direction: column;
-   box-shadow: var(--Sec-Text) 0.5px 0.5px 1px;
+   
 
 }
 
+#Alquiler img, #Recorrido img, #Taller img{
+    border-radius: 6px;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 15rem;
+}
 
 /*Hover focus*/
 
 nav ul li a:hover{
     background-color: var(--Sec-Text);
+    transform: translateY(-2px);
 
 }
 
