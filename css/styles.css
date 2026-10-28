@@ -13,12 +13,10 @@
     --Text-md: 1.5rem;
     --Text-lg: 3rem;
     --Logo-Mont:5.5rem;
-    --img-final:17rem;
+    --img-final:14rem;
     
 
 }
-
-/* Secciones semanticas*/
 
 
 
@@ -29,10 +27,9 @@ body{
 
 }
 
-
-header,footer{
-
+footer{
     display: flex; 
+    justify-content: space-around;
     background-color: var(--Title-Header);
     font-family: var(--Font-Text);
     color: var(--Blancuzco);
@@ -41,33 +38,44 @@ header,footer{
     
 }
 
+footer section{
+    display: flex; 
+    flex-direction: column;
+    align-items:flex-start;
+    flex-wrap: wrap;
+}
+
+footer section p{
+    font-family: var(--Font-Text);
+    max-width: 20rem;
+}
+
+footer h3{
+    font-family: var(--Font-Title);
+    color: var(--Blancuzco);
+}
+
+
 footer a{
     color: var(--Blancuzco);
 }
 
-
 header{
-    display: flex;             /* Convierte los elementos hijos en una línea horizontal */
-    align-items: center;       /* Centra los elementos verticalmente */
-
-}
-
-nav ul {
-    display: flex;
-    gap: var(--Text-lg);
-    list-style: none;  
-    margin: var(--Text-lg);
-    padding: 0;
-}
-
-nav ul li a {
-    display: block; /* Hace que el enlace se comporte como un bloque y llene el li */
-    padding: var(--Text-md) 25px; /* ¡Ajusta esto! Más padding vertical y horizontal = más área iluminada */
+    background-color: var(--Title-Header);
+    font-family: var(--Font-Text);
     color: var(--Blancuzco);
-    text-decoration: none;
-    font-weight: 500;
-    border-radius: var(--Text-sm); /* Opcional: bordes redondeados suaves */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+    padding: var(--Text-sm) var(--Text-lg);
+    display: flex;    
+    align-items: center; 
+    justify-content: space-between;
+
+}
+
+header div{
+    display: flex;    
+    align-items: center; 
+    
+
 }
 
 main {
@@ -77,6 +85,8 @@ main {
     margin: 0 auto;
 
 }
+
+
 
 table {
 
@@ -91,15 +101,19 @@ caption {
 
     font-family: var(--Font-Title);
     margin: var(--Text-lg);
+    color: var(--Title-Header);
 
 }
 
-th, td {
-    padding: 1rem var(--Text-lg); /* Espaciado interno cómodo (arriba/abajo y lados) */
-    border-bottom: 1px solid var(--Division); /* Una línea divisoria sutil entre filas */
+td {
+    padding: 1rem var(--Text-lg); 
+    border-bottom: 1px solid var(--Division);
+    color: var(--Sec-Text);
 }
 
 th {
+    padding: 1rem var(--Text-lg); /* Espaciado interno cómodo (arriba/abajo y lados) */
+    border-bottom: 1px solid var(--Division);
     background-color: var(--Title-Header);    /* Tu fondo azul oscuro */
     color: var(--Blancuzco);               /* Texto blanco para buen contraste */
     font-family: var(--Font-Title); /* Tu fuente de títulos */
@@ -113,157 +127,7 @@ aside{
 
 }
 
-
-
-
-
-
-/*Especificos*/
-
-header img {
-
-    width: var(--Logo-Mont);       /* Ocupa todo el ancho de su contenedor */
-    height: var(--Logo-Mont);      /* Ocupa todo el alto de su contenedor */
-    object-fit: cover; /* Evita que la imagen se deforme */
-    border-radius: 50%;
-    margin: var(--Text-md);
-}
-
-section img { 
-
-    width: 100%;
-    height: 400px;
-    object-fit: cover; /* ¡Esta es la clave! Hace que la imagen cubra todo el contenedor recortándose proporcionalmente si es necesario */
-    display: block;
-    
-}
-
-h1,h2,h3,legend{
-
-    font-family: var(--Font-Title);
-    
-
-}
-
-p,ul,ol,dl{
-
-    font-family: var(--Font-Text);
-}
-
-article ol{
-    
-    display: flex;
-    flex-direction: column;
-    gap: var(--Text-sm);
-    padding-left: var(--Text-md);
-
-}
-article ul{
-    
-    display: flex;
-    flex-direction: column;
-    gap: var(--Text-sm);
-    padding-left: var(--Text-md);
-
-}
-
-
-
-
-
-
-
-/*Clases - ID*/
-
-
-
-.No-list {
-    
-    list-style: none;
-}
-
-.img-footer{
-
-    width: var(--img-final);
-    height: var(--img-final);
-
-}
-
-.Reservation{
-    text-decoration: none;
-    color: var(--Blancuzco);
-    background-color: var(--Btn-Link);
-    border-radius: var(--Text-sm);
-    padding: var(--Text-sm) var(--Text-md);
-    
-    font-family: var(--Font-Text);
-
-
-}
-
-.menu{
-
-    color: var(--Background);
-}
-
-.link-gen{
-
-    color: #000000;
-    text-decoration: none;
-
-}
-
-#wpp{
-
-    position: fixed;
-    right: var(--Text-md);
-    bottom: var(--Text-md);
-    z-index: 9999;
-
-}
-
-#wpp img{
-
-    width: var(--Text-lg);
-
-}
-
-
-/*Hover focus*/
-
-nav ul li a:hover{
-    color: var(--Title-Header);
-    background-color: #F39A2B;
-
-}
-
-tbody tr:hover {
-    background-color: var(--Division);    /* Un gris muy claro al pasar el cursor */
-}
-
-
-.Reservation:hover{
-    
-    color: #14213D;
-    background-color: #F39A2B;
-
-}
-
-footer section a:hover{
-
-    color: #14213D;
-    background-color: #F39A2B;
-    
-}
-
-
-.link-gen:hover{
-
-    color: var(--Sec-Text);
-
-}
-
-
+/* Formulario */
 
 form {
     max-width: 650px;
@@ -274,7 +138,6 @@ form {
     border: 1px solid var(--Division);
     box-shadow: 0 4px 20px rgba(20, 33, 61, 0.05);
 }
-
 
 fieldset {
     border: 1px solid var(--Division);
@@ -319,19 +182,16 @@ select {
     background-color: var(--Blancuzco);
 }
 
-
 input::placeholder {
     color: var(--Sec-Text);
     opacity: 0.7;
 }
-
 
 input:focus, select:focus {
     outline: none;
     border-color: var(--Btn-Link);
     box-shadow: 0 0 0 3px rgba(30, 122, 79, 0.15);
 }
-
 
 ul.No-list {
     padding: 0;
@@ -363,17 +223,190 @@ button[type="submit"] {
     background-color: var(--Btn-Link);
     color: var(--Blancuzco);
     border: none;
-    padding: 14px 20px;
+    padding: 14px 10px;
     font-family: var(--Font-Title);
     border-radius: 6px;
     cursor: pointer;
-    width: 100%;
     margin-top: 10px;
 }
 
 button[type="submit"]:hover {
-    background-color: var(--Dest-SecB);
-    color: var(--Title-Header);
+    background-color: #209e63;
+    
 }
+
+/*Especificos*/
+
+nav ul {
+    display: flex;
+    gap: var(--Text-sm);
+    list-style: none;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+nav ul li a {
+    display: block; /* Hace que el enlace se comporte como un bloque y llene el li */
+    padding: var(--Text-md) 25px; /* ¡Ajusta esto! Más padding vertical y horizontal = más área iluminada */
+    color: var(--Blancuzco);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: var(--Text-sm); /* Opcional: bordes redondeados suaves */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+header img {
+
+    width: var(--Logo-Mont);       /* Ocupa todo el ancho de su contenedor */
+    height: var(--Logo-Mont);      /* Ocupa todo el alto de su contenedor */
+    object-fit: cover; /* Evita que la imagen se deforme */
+    border-radius: 50%;
+    margin: var(--Text-md);
+}
+
+section img { 
+
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* ¡Esta es la clave! Hace que la imagen cubra todo el contenedor recortándose proporcionalmente si es necesario */
+    display: block;
+    
+}
+
+header h1{
+
+    color: var(--Blancuzco);
+}
+
+h1,h2,h3,legend{
+
+    color: var(--Title-Header);
+    font-family: var(--Font-Title);
+    
+
+}
+
+p,ul,ol,dl{
+
+    color: var(--Sec-Text);
+    font-family: var(--Font-Text);
+}
+
+article ol{
+    
+    display: flex;
+    flex-direction: column;
+    gap: var(--Text-sm);
+    padding-left: var(--Text-md);
+
+}
+article ul{
+    
+    display: flex;
+    flex-direction: column;
+    gap: var(--Text-sm);
+    padding-left: var(--Text-md);
+
+}
+
+
+/*Clases - ID*/
+
+.No-list {
+    
+    list-style: none;
+}
+
+.img-footer{
+
+    width: var(--img-final);
+    height: var(--img-final);
+
+}
+
+.Reservation{
+    text-decoration: none;
+    color: var(--Blancuzco);
+    background-color: var(--Btn-Link);
+    border-radius: var(--Text-sm);
+    padding: var(--Text-sm) var(--Text-md);
+    font-family: var(--Font-Text);
+    cursor: pointer; /* Cambia el cursor a una mano */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: all 0.3s ease; /* Suaviza todas las transiciones */
+
+
+}
+
+.menu{
+
+    color: var(--Background);
+}
+
+.link-gen{
+
+    color: #000000;
+    text-decoration: none;
+
+}
+
+#wpp{
+
+    position: fixed;
+    right: var(--Text-md);
+    bottom: var(--Text-md);
+    z-index: 9999;
+
+}
+
+#wpp img{
+
+    width: var(--Text-lg);
+
+}
+
+#Alquiler, #Recorrido, #Taller{
+   padding: var(--Text-sm) var(--Text-sm);
+   border: 0.5px solid var(--Division);
+   border-radius: var(--Text-sm);
+   flex-direction: column;
+   box-shadow: var(--Sec-Text) 0.5px 0.5px 1px;
+
+}
+
+
+/*Hover focus*/
+
+nav ul li a:hover{
+    background-color: var(--Sec-Text);
+
+}
+
+tbody tr:hover {
+    background-color: var(--Division);    /* Un gris muy claro al pasar el cursor */
+}
+
+.Reservation:hover{
+    
+    background-color: #209e63; /* Un verde un poco más oscuro */
+    transform: translateY(-2px); /* Mueve el botón 2 píxeles hacia arriba */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Acentúa la sombra */
+
+}
+
+
+footer section a:hover{
+
+    background-color: var(--Sec-Text);
+    
+}
+
+.link-gen:hover{
+
+    color: var(--Sec-Text);
+
+}
+
+
 
 
