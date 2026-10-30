@@ -216,6 +216,16 @@ footer a {
 /* ---------- 2.5 Tablas (Tarifas) ---------- */
 /* Móvil: letra y relleno pequeños para que quepan sin scroll lateral */
 
+#TarifasT {
+    padding: var(--space-xs) var(--page-pad);
+    max-width: 80rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-md);
+}
+
+
+
 table {
     border-bottom: 1px solid var(--Division);
     width: 100%;
@@ -246,10 +256,21 @@ th {
     font-weight: 700;
 }
 
+#TarifasT section article {
+    padding-bottom: 3rem;
+}
+
 .Tarifas-Side {
     display: flex;
     flex-direction: column;
-    margin: var(--space-md) 0;
+    align-self: start;
+    padding: var(--space-md);
+    background-color: var(--Blancuzco);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--Division);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 25rem;   /* ≈ 480 px; ajústalo a tu gusto */
 }
 
 
@@ -410,8 +431,8 @@ button[type="submit"]:hover {
 }
 
 .link-gen {
-    color: var(--Sec-Text);
-    text-decoration: none;
+    color: var(--Btn-Link);
+    
 }
 
 /* Enlace activo del menú */
@@ -428,6 +449,7 @@ button[type="submit"]:hover {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: var(--space-md);
+    align-items: center;
 }
 
 .img-inc {
@@ -483,6 +505,7 @@ button[type="submit"]:hover {
     padding: var(--space-md);
     display: flex;
     flex-direction: column;
+    
 }
 
 .flota img {
@@ -493,8 +516,7 @@ button[type="submit"]:hover {
 /* Servicios (Alquiler, Recorrido, Taller) */
 #Alquiler, #Recorrido, #Taller {
     padding: var(--space-xs);
-    border: 0.5px solid var(--Division);
-    border-radius: var(--radius-md);
+    border-bottom: 0.5px solid var(--Division);
 }
 
 #Alquiler img, #Recorrido img, #Taller img {
@@ -689,4 +711,10 @@ footer section a:hover {
         grid-template-columns: 2fr 1fr;
         gap: 6rem;
     }
+
+    #TarifasT {
+        grid-template-columns: 1fr 2fr;
+        gap: 6rem;
+    }
+
 }
