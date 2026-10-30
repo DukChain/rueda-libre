@@ -1,4 +1,4 @@
-SEMANA 1
+//////////  SEMANA 1  //////////  
 
 Informacion otorgada en la seccion network al usar live server en el index.html por primera vez
 
@@ -228,6 +228,8 @@ solo resolviendo dudas e inquietudes para la parte del Formulario y Tabla copie 
 
 SEMANA 2
 
+MiniReto 2
+
 Se estrecha poco a poco la ventana del navegador y tanto header como footer reaccionan como deberian, haceidno que no se superponga la informacion y sea visible
 
 1280 px Se ven 3 por seccion
@@ -235,7 +237,7 @@ Se estrecha poco a poco la ventana del navegador y tanto header como footer reac
 500 px Se ven 3 por seccion, mas apretados pero aun asi todo el contenido es visible y nada se superpone entre si.
 
        
-OCT 28 - SEMANA 2 / DIA 1 / MiniReto 1, 2 y 3
+//////////  OCT 28 - SEMANA 2 / DIA 1 / MiniReto 1, 2 y 3  //////////  
 
 Se avanza sin problemas en el uso de grind se usa solo los recursos del moodle, el unico problema fue en la separacion de un texto e imagen en su contenedor, 
 se consulto con otros coders, la AI y el TL, se soluciono gracias al TL cambiando una informacion basica, adicionalmente para antes de ir al MiniReto 4 del Dia 1
@@ -244,3 +246,36 @@ de manera mas organizada.
 
 Adicionalmente se agrego un resumen general sobre lo sucedido en la semana 1 y se intentara realizar en la bitacora actualizaciones mas regulares.
 
+//////////  OCT 30 - SEMANA 2 / DIA 1 / MiniReto 3 y 4  //////////  
+
+Se completa el Dia 1 de la Semana 2, en esta semana como la mayoria de requerimientos no eran complicados se solucionan de manera simple y cambios minusculos, 
+como anteriormente se comento se pide a la AI el ordenamiento del CSS, se pide la AI Claude primero saber si mis styles.css contienen algun error, pero no marca 
+alguno y luego le pedi ayuda para el media query con los tamaños pedidos, la modificacion que realizo fue minima y mayormente fueron pequeñas adiciones 
+para la media de tablet y laptop.
+
+MiniReto 3
+
+portada - Grid - Ya que siento que es mas facil usarlo con grid por que unicamente es un texto he imagen.
+
+galería - FlexBox - Motivo es que al ser mas que todo un texto plano con informacion no vi necesidad de hacerlo con grid ya que para que sea mas ordenado es mejor que cada seccion no comparta espacio y se puede separar con flex-direction:column
+
+reservas - Grid - ya que uno de los requisitos es modificar el espacio que ocupan ambas partes asi no  
+
+fila del formulario - Grid -  Sinceramente no se si este le afecta ya que todo lo que he usado dentro del formulario nunca pide grid o flex, el unico caso que podria cambiar esto a flexbox es en label use display:block
+
+encabezado  - FlexBox - Motivo me es mas comodo visualmente y luego con media query puedo hacer el uso de justify content y flex direction para que el nav se mueva a mi gusto dependiendo el tipo de pantalla.
+
+pie - FlexBox - El mismo motivo que el encabezado, me es mas comodo de esa manera.
+
+
+MiniReto 4
+
+primer problema con tableta - en el header los botones no quedaban alineados.
+Solucion el segundo boton llamado Tarifas y Rutas se cambio a solo Tarifas.
+
+Segundo problema con tableta - El footer se pega mucho entre si
+Solucion se agrega un gap de 1 rem para solucionarlo
+
+
+Tercer problema con tableta - El Section nombrado #Reser-Cont ocupa todo el ancho de la pantalla.
+Solucion se agrega limites con max width y box-sizing asi queda con un tamaño fijo y es mas estetico

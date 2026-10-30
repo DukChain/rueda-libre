@@ -1,5 +1,19 @@
 /* ==========================================================================
-   1. VARIABLES GLOBALES
+   RUEDA LIBRE · styles.css (mobile first)
+
+   Orden del archivo:
+   1. Variables
+   2. Base (sin media query = versión móvil, una columna)
+   3. Tablet   (min-width: 768px)
+   4. Escritorio (min-width: 1200px)
+
+   Regla de oro: las media queries van SIEMPRE al final, después de la base,
+   para que ganen la cascada sin necesidad de subir la especificidad.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. VARIABLES
    ========================================================================== */
 
 :root {
@@ -17,23 +31,43 @@
     --Font-Title: "Montserrat", Arial, sans-serif;
     --Font-Text: "Open Sans", Arial, sans-serif;
 
-    /* Tamaños / espaciados */
-    --Text-sm: 0.5rem;
-    --Text-md: 1.5rem;
-    --Text-lg: 3rem;
-    --Logo-Mont: 5.5rem;
-    --img-final: 14rem;
+    /* Escala de espaciado: FIJA, no se redefine en las media queries.
+       (antes: --Text-sm, --Text-md, --Text-lg) */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 3rem;
 
+    /* Radios (antes se reutilizaba --Text-sm como radio) */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+    /* Tokens que SÍ cambian por pantalla. Aquí van los valores móvil;
+       tablet y escritorio los redefinen al final del archivo. */
+    --page-pad: 1rem;              /* relleno de header, main y footer */
+    --logo-size: 3.5rem;           /* antes --Logo-Mont (5.5rem) */
+    --cell-pad: 0.5rem 0.35rem;    /* relleno de td y th */
+
+    --img-final: 14rem;
 }
 
 
 /* ==========================================================================
-   2. BASE Y TIPOGRAFÍA GLOBAL
+   2. BASE (MÓVIL)
    ========================================================================== */
+
+/* ---------- 2.1 Global ---------- */
 
 body {
     background-color: var(--Background);
     margin: 0;
+}
+
+/* Ninguna imagen del sitio puede ser más ancha que su contenedor */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Títulos */
@@ -48,107 +82,114 @@ p, ul, ol, dl {
     font-family: var(--Font-Text);
 }
 
-/* Listas dentro de artículos (ol y ul compartían exactamente los mismos estilos) */
+/* Listas dentro de artículos */
 article ol,
 article ul {
     display: flex;
     flex-direction: column;
-    gap: var(--Text-sm);
-    padding-left: var(--Text-md);
+    gap: var(--space-xs);
+    padding-left: var(--space-md);
 }
 
 
-/* ==========================================================================
-   3. ESTRUCTURA: HEADER Y NAVEGACIÓN
-   ========================================================================== */
+/* ---------- 2.2 Header y navegación ---------- */
+/* Móvil: nombre arriba y menú debajo, todo centrado */
 
 header {
     background-color: var(--Title-Header);
     font-family: var(--Font-Text);
     color: var(--Blancuzco);
-    padding: var(--Text-sm) var(--Text-lg);
+    padding: var(--space-xs) var(--page-pad);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
 }
 
 header div {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 header h1 {
     color: var(--Blancuzco);
+    margin: 0;
+    font-size: 1.5rem;
 }
 
 header img {
-    width: var(--Logo-Mont);       /* Ocupa todo el ancho de su contenedor */
-    height: var(--Logo-Mont);      /* Ocupa todo el alto de su contenedor */
-    object-fit: cover;             /* Evita que la imagen se deforme */
+    width: var(--logo-size);
+    height: var(--logo-size);
+    object-fit: cover;               /* Evita que la imagen se deforme */
     border-radius: 50%;
-    margin: var(--Text-md);
+    margin: var(--space-xs);
 }
 
-/* Navegación */
 nav ul {
     display: flex;
-    gap: var(--Text-sm);
-    list-style: none;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-xs);
+    list-style: none;
+    margin: 0;
     padding: 0;
+    margin-top: 1rem;
+    
 }
 
 nav ul li a {
-    display: block;                      /* Hace que el enlace se comporte como un bloque y llene el li */
-    padding: var(--Text-md) 25px;        /* ¡Ajusta esto! Más padding vertical y horizontal = más área iluminada */
+    display: block;
+    padding: 0.75rem 1rem;
     color: var(--Blancuzco);
     text-decoration: none;
     font-weight: 500;
-    border-radius: var(--Text-sm);       /* Opcional: bordes redondeados suaves */
-    transition: background-color 0.3s;   /* Transición suave */
+    border-radius: var(--radius-md);
+    transition: background-color 0.3s;
 }
 
 
-/* ==========================================================================
-   4. ESTRUCTURA: MAIN Y LAYOUT PRINCIPAL
-   ========================================================================== */
+/* ---------- 2.3 Main ---------- */
 
 main {
-    padding: var(--Text-lg);
+    padding: var(--page-pad);
     max-width: 60rem;
     margin: 0 auto;
 }
 
+/* Página de reservas: formulario y resumen en una sola columna.
+   minmax(0, 1fr) evita que un hijo ancho (input date, tabla) estire la columna. */
 #Main-Form {
     max-width: 70rem;
     display: grid;
-    grid-template-columns: 66% 33%;
-    gap: 6rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-md);
 }
 
 
-/* ==========================================================================
-   5. ESTRUCTURA: FOOTER
-   ========================================================================== */
+/* ---------- 2.4 Footer ---------- */
 
 footer {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    text-align: center;
     background-color: var(--Title-Header);
     font-family: var(--Font-Text);
     color: var(--Blancuzco);
-    padding: var(--Text-sm) var(--Text-lg);
+    padding: var(--space-xs) var(--page-pad);
+    padding-bottom: 5rem;
 }
 
 footer section {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
 }
 
 footer section p {
-    color: var(--Blancuzco); /* Mejor contraste sobre el fondo azul oscuro */
+    color: var(--Blancuzco);
     max-width: 20rem;
 }
 
@@ -161,79 +202,80 @@ footer a {
     color: var(--Blancuzco);
 }
 
+/* Ancho preferido de 14rem, pero nunca más que el contenedor.
+   aspect-ratio + object-fit evitan que la imagen se deforme. */
 .img-footer {
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     width: var(--img-final);
-    height: var(--img-final);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
 }
 
 
-/* ==========================================================================
-   6. TABLAS (Tarifas)
-   ========================================================================== */
+/* ---------- 2.5 Tablas (Tarifas) ---------- */
+/* Móvil: letra y relleno pequeños para que quepan sin scroll lateral */
 
 table {
-    padding-bottom: var(--Text-md);
     border-bottom: 1px solid var(--Division);
-    width: 100%;                  /* Ocupa todo el ancho disponible */
+    width: 100%;
     border-collapse: collapse;
     text-align: left;
     font-family: var(--Font-Text);
+    font-size: 0.8rem;
 }
 
 caption {
     font-family: var(--Font-Title);
-    margin: var(--Text-lg);
+    margin: var(--space-sm);
     color: var(--Title-Header);
 }
 
 td {
-    padding: 1rem var(--Text-lg);
+    padding: var(--cell-pad);
     border-bottom: 1px solid var(--Division);
     color: var(--Sec-Text);
 }
 
 th {
-    padding: 1rem var(--Text-lg);              /* Espaciado interno cómodo (arriba/abajo y lados) */
+    padding: var(--cell-pad);
     border-bottom: 1px solid var(--Division);
-    background-color: var(--Title-Header);     /* Tu fondo azul oscuro */
-    color: var(--Blancuzco);                   /* Texto blanco para buen contraste */
-    font-family: var(--Font-Title);            /* Tu fuente de títulos */
+    background-color: var(--Title-Header);
+    color: var(--Blancuzco);
+    font-family: var(--Font-Title);
     font-weight: 700;
 }
 
 .Tarifas-Side {
     display: flex;
     flex-direction: column;
-    margin: var(--Logo-Mont);
+    margin: var(--space-md) 0;
 }
 
 
-/* ==========================================================================
-   7. FORMULARIO DE RESERVA
-   ========================================================================== */
+/* ---------- 2.6 Formulario de reserva ---------- */
 
-/* Contenedor del formulario */
 form {
     max-width: 650px;
     margin: 0 auto;
     background: var(--Blancuzco);
-    padding: 35px;
-    border-radius: 12px;
+    padding: 0.75rem;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--Division);
     box-shadow: 0 4px 20px rgba(20, 33, 61, 0.05);
 }
 
 fieldset {
+    min-width: 0;                 /* un fieldset no se encoge sin esto */
     border: 1px solid var(--Division);
-    border-radius: 8px;
-    padding: 22px;
+    border-radius: var(--radius-md);
+    padding: 1rem;
     margin-bottom: 24px;
     background-color: var(--Blancuzco);
 }
 
 legend {
-    font-size: var(--Text-md);
+    font-size: 1.25rem;
     padding: 0 10px;
 }
 
@@ -249,21 +291,29 @@ label {
     color: var(--Title-Header);
 }
 
-/* Campos de entrada */
+/* Campos de entrada (se agregó textarea, que no tenía estilos).
+   font-size 1rem evita el zoom automático de iOS al enfocar un campo. */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="date"],
 input[type="number"],
-select {
+select,
+textarea {
     width: 100%;
+    min-width: 0;
     padding: 12px 14px;
     border: 1px solid var(--Division);
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     font-family: var(--Font-Text);
+    font-size: 1rem;
     color: var(--Title-Header);
     box-sizing: border-box;
     background-color: var(--Blancuzco);
+}
+
+textarea {
+    resize: vertical;
 }
 
 input::placeholder {
@@ -271,7 +321,7 @@ input::placeholder {
     opacity: 0.7;
 }
 
-input:focus, select:focus {
+input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: var(--Btn-Link);
     box-shadow: 0 0 0 3px rgba(30, 122, 79, 0.15);
@@ -283,7 +333,7 @@ ul.No-list {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espaciado uniforme entre opciones */
+    gap: 10px;
 }
 
 ul.No-list li label {
@@ -295,7 +345,7 @@ ul.No-list li label {
     cursor: pointer;
     background-color: var(--Background);
     padding: 10px 14px;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     border: 1px solid var(--Division);
 }
 
@@ -310,7 +360,7 @@ button[type="submit"] {
     border: none;
     padding: 14px 10px;
     font-family: var(--Font-Title);
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
     margin-top: 10px;
 }
@@ -319,13 +369,19 @@ button[type="submit"]:hover {
     background-color: #209e63;
 }
 
-/* Resumen de la reserva (columna lateral) */
+/* Resumen de la reserva.
+   Se quitó max-height: 300px (cortaba el texto al angostarse la columna);
+   align-self: start logra que no se estire a la altura del formulario. */
 #Reser-Cont {
-    padding: var(--Text-md) var(--Text-md);
+    align-self: start;
+    padding: var(--space-md);
     background-color: var(--Blancuzco);
-    max-height: 300px;
-    border-radius: 12px;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--Division);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 25rem;   /* ≈ 480 px; ajústalo a tu gusto */
+    margin: 0 auto; 
 }
 
 #Reser-Cont h2 {
@@ -333,31 +389,24 @@ button[type="submit"]:hover {
 }
 
 #Reser-Cont p {
-    padding-bottom: var(--Text-md);
+    padding-bottom: var(--space-md);
     border-bottom: 1px solid var(--Division);
 }
 
 
-/* ==========================================================================
-   8. COMPONENTES: BOTONES Y ENLACES
-   ========================================================================== */
+/* ---------- 2.7 Botones y enlaces ---------- */
 
-/* Botón de reserva */
 .Reservation {
     text-decoration: none;
     color: var(--Blancuzco);
     background-color: var(--Btn-Link);
-    border-radius: var(--Text-sm);
-    padding: var(--Text-sm) var(--Text-sm);
+    border-radius: var(--radius-md);
+    padding: var(--space-xs);
     font-family: var(--Font-Text);
-    cursor: pointer;                            /* Cambia el cursor a una mano */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);   /* Sombra suave */
-    transition: all 0.3s ease;                  /* Suaviza todas las transiciones */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
     max-width: 7rem;
-}
-
-.menu {
-    color: var(--Background);
 }
 
 .link-gen {
@@ -372,117 +421,113 @@ button[type="submit"]:hover {
 }
 
 
-/* ==========================================================================
-   9. COMPONENTES: SECCIONES DE CONTENIDO
-   ========================================================================== */
+/* ---------- 2.8 Secciones de contenido ---------- */
 
-/* Quiénes somos */
+/* Portada / Quiénes somos: una columna en móvil */
 .QuienSomos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--Text-md);
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-md);
 }
 
 .img-inc {
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     width: 100%;
-    height: 400px;
-    object-fit: cover; /* ¡Esta es la clave! Hace que la imagen cubra todo el contenedor recortándose proporcionalmente si es necesario */
+    height: 14rem;
+    object-fit: cover;
     display: block;
 }
 
-/* Rutas */
+/* Galería de rutas: tarjeta en columna, imagen a todo el ancho */
 .GRutas {
     margin: 0;
 }
 
 .GRutas section {
     display: flex;
-    align-items:center;
+    flex-direction: column;
+    align-items: stretch;
     justify-content: space-between;
-    margin-bottom: var(--Text-md);
+    margin-bottom: var(--space-md);
     border: 0.5px solid var(--Division);
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     background-color: var(--Blancuzco);
 }
 
 .GRutas section article {
     display: flex;
     flex-direction: column;
-    margin: var(--Text-sm);
+    margin: var(--space-xs);
 }
 
 .GRutas img {
-    width: 10rem;
-    border-radius: 6px;
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
 }
 
-/* Flota */
+/* Flota: una columna en móvil */
 .flota {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--Text-md);
+    grid-template-columns: minmax(1fr, 1fr);
+    gap: var(--space-md);
+    width: 17rem;
+    margin: 0 auto;
 }
 
 .flota article {
     background-color: var(--Blancuzco);
     border: 0.5px solid var(--Division);
-    border-radius: 7px;
-    padding: var(--Text-md);
+    border-radius: var(--radius-sm);
+    padding: var(--space-md);
     display: flex;
     flex-direction: column;
 }
 
 .flota img {
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     width: 150px;
 }
 
 /* Servicios (Alquiler, Recorrido, Taller) */
 #Alquiler, #Recorrido, #Taller {
-    padding: var(--Text-sm) var(--Text-sm);
+    padding: var(--space-xs);
     border: 0.5px solid var(--Division);
-    border-radius: var(--Text-sm);
+    border-radius: var(--radius-md);
 }
 
 #Alquiler img, #Recorrido img, #Taller img {
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     display: block;
     object-fit: cover;
     width: 100%;
-    height: 15rem;
+    height: 12rem;
 }
 
 
-/* ==========================================================================
-   10. ELEMENTOS FLOTANTES (WhatsApp)
-   ========================================================================== */
+/* ---------- 2.9 Elementos flotantes (WhatsApp) ---------- */
 
 #wpp {
     position: fixed;
-    right: var(--Text-md);
-    bottom: var(--Text-md);
+    right: var(--space-md);
+    bottom: var(--space-md);
     z-index: 9999;
 }
 
 #wpp img {
-    width: var(--Text-lg);
+    width: 3rem;
 }
 
 
-/* ==========================================================================
-   11. UTILIDADES
-   ========================================================================== */
+/* ---------- 2.10 Utilidades ---------- */
 
 .No-list {
     list-style: none;
 }
 
 
-/* ==========================================================================
-   12. HOVER / FOCUS
-   (Se mantienen al final para respetar el orden de la cascada original)
-   ========================================================================== */
+/* ---------- 2.11 Hover / focus ---------- */
 
 nav ul li a:hover {
     background-color: var(--Sec-Text);
@@ -490,14 +535,14 @@ nav ul li a:hover {
 }
 
 tbody tr:hover {
-    background-color: var(--Division); /* Un gris muy claro al pasar el cursor */
+    background-color: var(--Division);
 }
 
 .activo:hover,
 .Reservation:hover {
-    background-color: #209e63;                  /* Un verde un poco más oscuro */
-    transform: translateY(-2px);                /* Mueve el botón 2 píxeles hacia arriba */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Acentúa la sombra */
+    background-color: #209e63;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 footer section a:hover {
@@ -505,5 +550,143 @@ footer section a:hover {
 }
 
 
+/* ==========================================================================
+   3. TABLET (min-width: 768px)
+   Aquí se recupera la distribución del MiniReto 1 en encabezado y pie.
+   ========================================================================== */
+
+@media (min-width: 768px) {
+
+    /* Tokens por pantalla */
+    :root {
+        --page-pad: 2rem;
+        --logo-size: 5.5rem;
+        --cell-pad: 0.75rem 1.5rem;
+    }
+
+    /* Encabezado: nombre a la izquierda, menú a la derecha */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header h1 {
+        margin: 0.67em 0;
+        font-size: 2rem;
+    }
+
+    header img {
+        margin: var(--space-md);
+    }
+
+    nav ul {
+        justify-content: flex-start;
+        margin: 1rem 0;
+    }
+
+    nav ul li a {
+        padding: var(--space-md) 25px;
+    }
+
+    /* Portada */
+    .QuienSomos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .img-inc {
+        height: 400px;
+    }
+
+    /* Servicios */
+    #Alquiler img, #Recorrido img, #Taller img {
+        height: 15rem;
+    }
+
+    /* Flota: 2 columnas (con 3 la tarjeta queda muy angosta a 768 px) */
+    .flota {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 45rem;
+        margin: 0 auto;
+    }
+
+    /* Galería de rutas: imagen a la derecha, como el MiniReto 1 */
+    .GRutas section {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .GRutas img {
+        width: 10rem;
+        height: auto;
+    }
+
+    /* Tablas */
+    table {
+        font-size: 1rem;
+    }
+
+    caption {
+        margin: var(--space-lg);
+    }
+
+    .Tarifas-Side {
+        margin: 5.5rem;
+    }
+
+    /* Reservas (sigue en una columna; el resumen aún no cabe al lado) */
+    #Main-Form {
+        gap: var(--space-lg);
+    }
+
+    form {
+        padding: 35px;
+    }
+
+    fieldset {
+        padding: 22px;
+    }
+
+    legend {
+        font-size: var(--space-md);
+    }
+
+    /* Pie: tres secciones en fila */
+    footer {
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-around;
+        gap: var(--space-sm);
+        text-align: left;
+    }
+
+    footer section {
+        align-items: flex-start;
+    }
+}
 
 
+/* ==========================================================================
+   4. ESCRITORIO (min-width: 1200px)
+   ========================================================================== */
+
+@media (min-width: 1200px) {
+
+    /* Tokens por pantalla: vuelven a los valores originales */
+    :root {
+        --page-pad: var(--space-lg);
+        --cell-pad: 1rem var(--space-lg);
+    }
+
+    /* Flota: 3 columnas */
+    .flota {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Reservas: formulario + resumen lado a lado */
+    #Main-Form {
+        grid-template-columns: 2fr 1fr;
+        gap: 6rem;
+    }
+}
